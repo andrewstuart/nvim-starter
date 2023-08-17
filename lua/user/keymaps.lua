@@ -1,5 +1,5 @@
 -- Space as leader key
-vim.g.mapleader = ' '
+vim.g.mapleader = '\\'
 
 -- Shortcuts
 vim.keymap.set({'n', 'x', 'o'}, '<leader>h', '^')
