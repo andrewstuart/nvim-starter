@@ -11,6 +11,8 @@ local Plugins = {
   {'tanvirtin/monokai.nvim'},
   {'lunarvim/darkplus.nvim'},
 	{'fatih/vim-go'},
+	{'SirVer/ultisnips'},
+	{'airblade/vim-gitgutter'},
 }
 
 return Plugins

@@ -10,12 +10,14 @@ Plugin.dependencies = {
   -- Snippets
   {'L3MON4D3/LuaSnip'},
   {'rafamadriz/friendly-snippets'},
+	{"quangnguyen30192/cmp-nvim-ultisnips"},
 }
 
 Plugin.event = 'InsertEnter'
 
 function Plugin.config()
   vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+	local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
 
   local cmp = require('cmp')
   local luasnip = require('luasnip')
@@ -28,10 +30,11 @@ function Plugin.config()
   cmp.setup({
     snippet = {
       expand = function(args)
-        luasnip.lsp_expand(args.body)
+				vim.fn["UltiSnips#Anon"](args.body)
       end
     },
     sources = {
+			{ name = "ultisnips" },
       {name = 'path'},
       {name = 'nvim_lsp'},
       {name = 'buffer', keyword_length = 3},
@@ -57,6 +60,18 @@ function Plugin.config()
     },
     -- See :help cmp-mapping
     mapping = {
+			['<Tab>'] = cmp.mapping(
+			function(fallback)
+				cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
+			end,
+			{ "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
+			),
+			['<S-Tab>'] = cmp.mapping(
+			function(fallback)
+				cmp_ultisnips_mappings.jump_backwards(fallback)
+			end,
+			{ "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
+			),
       ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
       ['<Down>'] = cmp.mapping.select_next_item(select_opts),
 
@@ -85,26 +100,25 @@ function Plugin.config()
           fallback()
         end
       end, {'i', 's'}),
-
-      ['<Tab>'] = cmp.mapping(function(fallback)
-        local col = vim.fn.col('.') - 1
-
-        if cmp.visible() then
-          cmp.select_next_item(select_opts)
-        elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-          fallback()
-        else
-          cmp.complete()
-        end
-      end, {'i', 's'}),
-
-      ['<S-Tab>'] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item(select_opts)
-        else
-          fallback()
-        end
-      end, {'i', 's'}),
+      -- ['<Tab>'] = cmp.mapping(function(fallback)
+      --   local col = vim.fn.col('.') - 1
+      --
+      --   if cmp.visible() then
+      --     cmp.select_next_item(select_opts)
+      --   elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+      --     fallback()
+      --   else
+      --     cmp.complete()
+      --   end
+      -- end, {'i', 's'}),
+      --
+      -- ['<S-Tab>'] = cmp.mapping(function(fallback)
+      --   if cmp.visible() then
+      --     cmp.select_prev_item(select_opts)
+      --   else
+      --     fallback()
+      --   end
+      -- end, {'i', 's'}),
     },
   })
 end
