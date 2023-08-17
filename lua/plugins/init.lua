@@ -10,9 +10,18 @@ local Plugins = {
   {'joshdick/onedark.vim'},
   {'tanvirtin/monokai.nvim'},
   {'lunarvim/darkplus.nvim'},
-	{'fatih/vim-go'},
-	{'SirVer/ultisnips'},
+	-- {'fatih/vim-go'},
+  -- {'ray-x/go.nvim'},
+	-- {'SirVer/ultisnips'},
 	{'airblade/vim-gitgutter'},
+	{'ayu-theme/ayu-vim'},
+	{'bkad/CamelCaseMotion'},
+  {'mattn/emmet-vim'},
+  {'andrewstuart/vim-kubernetes'},
+  {'cuducos/yaml.nvim'},
+  {'dense-analysis/ale'},
+  {'tomasr/molokai'},
+
 }
 
 return Plugins

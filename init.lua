@@ -1,7 +1,3 @@
-vim.opt.rtp:prepend('~/.vim')
-vim.opt.packpath = vim.opt.runtimepath:get()
-vim.cmd('source ~/.vimrc')
-
 local load = function(mod)
   package.loaded[mod] = nil
   require(mod)
@@ -12,5 +8,10 @@ load('user.commands')
 load('user.keymaps')
 load('user.plugins')
 
-pcall(vim.cmd.colorscheme, 'ayu')
--- pcall(vim.cmd.colorscheme, 'monokai')
+vim.opt.rtp:prepend('~/.vim')
+vim.opt.packpath = vim.opt.runtimepath:get()
+vim.cmd('source ~/.vimrc')
+
+-- pcall(vim.cmd.colorscheme, 'ayu')
+pcall(vim.cmd.colorscheme, 'molokai')
+
