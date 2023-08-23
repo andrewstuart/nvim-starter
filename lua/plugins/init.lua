@@ -13,7 +13,7 @@ local Plugins = {
   {'lunarvim/darkplus.nvim'},
 	-- {'fatih/vim-go'},
   -- {'ray-x/go.nvim'},
-	-- {'SirVer/ultisnips'},
+	{'SirVer/ultisnips'},
 	{'airblade/vim-gitgutter'},
 	{'ayu-theme/ayu-vim'},
 	{'bkad/CamelCaseMotion'},
