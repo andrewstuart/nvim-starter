@@ -1,6 +1,4 @@
 inoremap jk <Esc>
-call pathogen#infect()
-call pathogen#helptags()
 filetype plugin indent on
 
 " For those slowpoke pinky shifts
