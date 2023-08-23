@@ -10,7 +10,7 @@ load('user.plugins')
 
 vim.opt.rtp:prepend('~/.vim')
 vim.opt.packpath = vim.opt.runtimepath:get()
-vim.cmd('source ~/.vimrc')
+vim.cmd('source ~/.config/nvim/vimrc')
 -- vim.cmd('let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0')
 
 -- pcall(vim.cmd.colorscheme, 'ayu')
