@@ -43,6 +43,9 @@ local Plugin = {
     vim.api.nvim_set_keymap("n", "<leader>gc", "<cmd>GoCoverage<CR>", {noremap = true})
     vim.api.nvim_set_keymap("n", "<leader>gb", "<cmd>GoCoverageBrowser<CR>", {noremap = true})
     vim.api.nvim_set_keymap("n", "<leader>gs", "<cmd>GoSameIds<CR>", {noremap = true})
+    vim.api.nvim_set_keymap("n", "<leader>gi", "<cmd>GoInstall<CR>", {noremap = true})
+    vim.api.nvim_set_keymap("n", "<leader>ge", "<cmd>GoIfErr<CR>", {noremap = true})
+    vim.api.nvim_set_keymap("n", "<leader>gm", "<cmd>GoModTidy<CR>", {noremap = true})
 
     -- vim.cmd('au FileType go nmap <leader>a GoAlt')
     -- vim.cmd('au FileType go nmap <leader>b <Plug>(go-build)')
