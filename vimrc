@@ -111,8 +111,8 @@ set foldmethod=manual  "Lets you hide sections of code
 
 nnoremap giy "+
 nnoremap gy "*
-vnoremap giy "+
-vnoremap gy "*
+" vnoremap giy "+
+" vnoremap gy "*
 " nnoremap sip "+
 " nnoremap sp "*
 
@@ -205,7 +205,7 @@ let mapleader="\\"
 " completion
 " au filetype go inoremap <buffer> . .<C-x><C-o>
 
-au BufRead,BufNewFile *.yaml.tpl set ft=yaml
+" au BufRead,BufNewFile *.yaml.tpl set ft=yaml
 au FileType yaml let g:indentLine_char = '⦙'
 
 " au BufRead,BufNewFile go.mod set ft=gomod
@@ -424,3 +424,4 @@ endfunction
 command! PrettyXML call DoPrettyXML()
 
 au FileType rust nmap <leader>r :RustRun<CR>
+let g:copilot_filetypes = {'markdown': v:true, 'yaml': v:true, 'helm': v:true}

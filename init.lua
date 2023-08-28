@@ -3,8 +3,8 @@ local load = function(mod)
   require(mod)
 end
 
-load('user.settings')
 load('user.commands')
+load('user.settings')
 load('user.keymaps')
 load('user.plugins')
 
@@ -15,4 +15,3 @@ vim.cmd('source ~/.config/nvim/vimrc')
 
 -- pcall(vim.cmd.colorscheme, 'ayu')
 pcall(vim.cmd.colorscheme, 'molokai')
-
