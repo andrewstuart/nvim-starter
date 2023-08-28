@@ -8,9 +8,11 @@ local Plugins = {
 	{'airblade/vim-gitgutter'},
 	{'bkad/CamelCaseMotion'},
   {'mattn/emmet-vim'},
-  {'andrewstuart/vim-kubernetes'},
   {'cuducos/yaml.nvim'},
   {'dense-analysis/ale'},
+  {'towolf/vim-helm'},
+  -- {dir = '~/.vim/bundle/vim-kubernetes'},
+  -- {'andrewstuart/vim-kubernetes'},
   -- {'numToStr/Comment.nvim', config = true, event = 'VeryLazy'},
 
   -- Themes
