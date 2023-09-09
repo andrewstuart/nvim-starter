@@ -13,6 +13,10 @@ cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
+
+let g:LanguageClient_serverCommands = {
+    \ 'sql': ['sql-language-server', 'up', '--method', 'stdio'],
+    \ }
   
 function! PasteSplitContent()
   let split_list = split(@+, "\n")
@@ -109,8 +113,8 @@ set foldmethod=manual  "Lets you hide sections of code
 " nnoremap ; :
 " nnoremap : ;
 
-nnoremap giy "+
-nnoremap gy "*
+" nnoremap giy "+
+" nnoremap gy "*
 " vnoremap giy "+
 " vnoremap gy "*
 " nnoremap sip "+
@@ -126,13 +130,13 @@ imap <F6> <Esc>:wqall<CR>
 map <F10> <Esc>:TagbarToggle<CR>
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
-nmap <silent> ;; :bnext<CR>
-nmap <silent> ;1 :b1<CR>
-nmap <silent> ;2 :b2<CR>
-nmap <silent> ;3 :b3<CR>
-nmap <silent> ;4 :b4<CR>
-nmap <silent> ;5 :b5<CR>
-nmap <silent> ;3 :b3<CR>
+" nmap <silent> ;; :bnext<CR>
+" nmap <silent> ;1 :b1<CR>
+" nmap <silent> ;2 :b2<CR>
+" nmap <silent> ;3 :b3<CR>
+" nmap <silent> ;4 :b4<CR>
+" nmap <silent> ;5 :b5<CR>
+" nmap <silent> ;3 :b3<CR>
 "--- Ends navigation commands
 "--- The following adds a sweet menu, press F4 to use it.
 
@@ -298,6 +302,7 @@ let g:ale_go_golangci_lint_options = '
       \ --disable=depguard
       \ --disable=godot
       \ --disable=wsl
+      \ --disable=nlreturn
       \'
 let g:ale_go_golangci_lint_package = 1
 " let g:ale_set_signs = 0

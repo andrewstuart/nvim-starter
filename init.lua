@@ -7,6 +7,7 @@ load('user.commands')
 load('user.settings')
 load('user.keymaps')
 load('user.plugins')
+load('user.colors')
 
 vim.opt.rtp:prepend('~/.vim')
 vim.opt.packpath = vim.opt.runtimepath:get()

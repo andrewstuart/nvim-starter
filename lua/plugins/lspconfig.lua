@@ -80,7 +80,7 @@ function Plugin.config()
       'cssls',
       'lua_ls',
       -- 'qvalentin/helm-ls',
-      -- 'helm_ls',
+      'helm_ls',
     },
     handlers = {
       -- See :help mason-lspconfig-dynamic-server-setup
@@ -100,9 +100,9 @@ function Plugin.config()
       ['lua_ls'] = function()
         require('plugins.lsp.lua_ls')
       end,
-      -- ['helm_ls'] = function()
-      --   require('plugins.lsp.helm_ls')
-      -- end,
+      ['helm_ls'] = function()
+        require('plugins.lsp.helm_ls')
+      end,
     }
   })
 end

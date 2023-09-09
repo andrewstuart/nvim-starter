@@ -1,5 +1,7 @@
 local Plugins = {
   {'tpope/vim-fugitive'},
+  {'tpope/vim-rhubarb'},
+  {'shumphrey/fugitive-gitlab.vim'},
   {'wellle/targets.vim'},
   {'tpope/vim-repeat'},
   {'tpope/vim-commentary'},
@@ -11,7 +13,10 @@ local Plugins = {
   {'cuducos/yaml.nvim'},
   {'dense-analysis/ale'},
   {'towolf/vim-helm'},
-  -- {dir = '~/.vim/bundle/vim-kubernetes'},
+  {'wellle/context.vim'},
+  {'wellle/targets.vim'},
+  {'AndrewRadev/splitjoin.vim'},
+  {dir = '~/.vim/bundle/vim-kubernetes'},
   -- {'andrewstuart/vim-kubernetes'},
   -- {'numToStr/Comment.nvim', config = true, event = 'VeryLazy'},
 
@@ -21,7 +26,6 @@ local Plugins = {
   {'tanvirtin/monokai.nvim'},
   {'lunarvim/darkplus.nvim'},
 	-- {'fatih/vim-go'},
-  -- {'ray-x/go.nvim'},
 	{'ayu-theme/ayu-vim'},
   {'tomasr/molokai'},
 }

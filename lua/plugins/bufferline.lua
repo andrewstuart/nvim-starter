@@ -7,6 +7,7 @@ Plugin.event = 'VeryLazy'
 Plugin.opts = {
   options = {
     mode = 'buffers',
+    numbers = 'buffer_id',
     offsets = {
       {filetype = 'NvimTree'}
     },

@@ -21,9 +21,6 @@ local Plugin = {
 
 
     -- set nvim keymap for FileType go
-    -- vim.api.nvim_create_autocmd("BufRead", {
-    --   pattern = "*.go",
-    --   callback = function()
     --     vim.api.nvim_set_keymap("n", "<leader>r", "<cmd>GoRun<CR>", {noremap = true})
     --     vim.api.nvim_set_keymap("n", "<leader>b", "<cmd>GoBuild<CR>", {noremap = true})
     --     vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>GoTest<CR>", {noremap = true})
@@ -34,18 +31,24 @@ local Plugin = {
     --   group = format_sync_grp,
     -- })
 
-    vim.api.nvim_set_keymap("n", "<leader>r", "<cmd>GoRun<CR>", {noremap = true})
-    vim.api.nvim_set_keymap("n", "<leader>b", "<cmd>GoBuild<CR>", {noremap = true})
-    vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>GoTest<CR>", {noremap = true})
-    vim.api.nvim_set_keymap("n", "<leader>tf", "<cmd>GoTestFunc<CR>", {noremap = true})
-    vim.api.nvim_set_keymap("n", "<leader>gd", "<cmd>GoDoc<CR>", {noremap = true})
-    vim.api.nvim_set_keymap("n", "<leader>gr", "<cmd>GoRename<CR>", {noremap = true})
-    vim.api.nvim_set_keymap("n", "<leader>gc", "<cmd>GoCoverage<CR>", {noremap = true})
-    vim.api.nvim_set_keymap("n", "<leader>gb", "<cmd>GoCoverageBrowser<CR>", {noremap = true})
-    vim.api.nvim_set_keymap("n", "<leader>gs", "<cmd>GoSameIds<CR>", {noremap = true})
-    vim.api.nvim_set_keymap("n", "<leader>gi", "<cmd>GoInstall<CR>", {noremap = true})
-    vim.api.nvim_set_keymap("n", "<leader>ge", "<cmd>GoIfErr<CR>", {noremap = true})
-    vim.api.nvim_set_keymap("n", "<leader>gm", "<cmd>GoModTidy<CR>", {noremap = true})
+    vim.api.nvim_create_autocmd({"BufEnter", "BufNewFile"}, {
+      pattern = "*.go",
+      callback = function()
+        vim.api.nvim_set_keymap("n", "<leader>r", "<cmd>GoRun<CR>", {noremap = true})
+        vim.api.nvim_set_keymap("n", "<leader>b", "<cmd>GoBuild<CR>", {noremap = true})
+        vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>GoTest<CR>", {noremap = true})
+        vim.api.nvim_set_keymap("n", "<leader>tf", "<cmd>GoTestFunc<CR>", {noremap = true})
+        vim.api.nvim_set_keymap("n", "<leader>gd", "<cmd>GoDoc<CR>", {noremap = true})
+        vim.api.nvim_set_keymap("n", "<leader>gr", "<cmd>GoRename<CR>", {noremap = true})
+        vim.api.nvim_set_keymap("n", "<leader>gc", "<cmd>GoCoverage<CR>", {noremap = true})
+        vim.api.nvim_set_keymap("n", "<leader>gb", "<cmd>GoCoverageBrowser<CR>", {noremap = true})
+        vim.api.nvim_set_keymap("n", "<leader>gs", "<cmd>GoSameIds<CR>", {noremap = true})
+        vim.api.nvim_set_keymap("n", "<leader>gi", "<cmd>GoInstall<CR>", {noremap = true})
+        vim.api.nvim_set_keymap("n", "<leader>ge", "<cmd>GoIfErr<CR>", {noremap = true})
+        vim.api.nvim_set_keymap("n", "<leader>gm", "<cmd>GoModTidy<CR>", {noremap = true})
+      end,
+    })
+
 
     -- vim.cmd('au FileType go nmap <leader>a GoAlt')
     -- vim.cmd('au FileType go nmap <leader>b <Plug>(go-build)')
