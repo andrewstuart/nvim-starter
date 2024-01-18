@@ -9,7 +9,7 @@ vim.keymap.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
 
 -- Basic clipboard interaction
 vim.keymap.set({'n', 'x', 'v'}, 'gy', '"+y') -- copy
-vim.keymap.set({'n', 'x', 'v'}, 'gp', '"+p') -- paste
+-- vim.keymap.set({'n', 'x', 'v'}, 'gp', '"+p') -- paste
 vim.keymap.set({'n', 'x', 'v'}, 'gY', '"*y') -- copy
 vim.keymap.set({'n', 'x', 'v'}, 'gP', '"*p') -- paste
 
@@ -29,6 +29,9 @@ vim.keymap.set({'n', 'x'}, '<leader>x', '"_x')
 vim.keymap.set('n', '<leader>w', '<cmd>write<cr>')
 vim.keymap.set('n', '<leader>bq', '<cmd>bdelete<cr>')
 vim.keymap.set('n', '<leader>bl', '<cmd>buffer #<cr>')
+
+vim.keymap.set('n', '<leader>fh', '<cmd>set filetype=helm<cr>')
+vim.keymap.set('n', '<leader>fy', '<cmd>set filetype=yaml<cr>')
 
 -- Buffers
 vim.cmd('nmap <silent> ;; :bnext<CR>')

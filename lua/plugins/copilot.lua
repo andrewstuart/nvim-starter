@@ -11,6 +11,9 @@ Plugin.config = function()
   vim.g.copilot_no_space_map = true
   vim.g.copilot_no_tab_map = true
   vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+  -- Disable/enable copilot
+  vim.keymap.set({'n', 'x', 'v'}, '<leader>cd', '<cmd>Copilot disable<cr><cmd>echo "Copilot disabled"<cr>')
+  vim.keymap.set({'n', 'x', 'v'}, '<leader>ce', '<cmd>Copilot enable<cr><cmd>echo "Copilot enabled"<cr>')
 
   -- next/prev
   -- vim.api.nvim_set_keymap("i", "<C-]>", 'copilot#Next()', { silent = true, expr = true })

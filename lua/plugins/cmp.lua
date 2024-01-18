@@ -10,6 +10,7 @@ Plugin.dependencies = {
   -- Snippets
   {'L3MON4D3/LuaSnip'},
   {'rafamadriz/friendly-snippets'},
+	{"SirVer/ultisnips"},
 	{"quangnguyen30192/cmp-nvim-ultisnips"},
 }
 
@@ -31,10 +32,10 @@ function Plugin.config()
     snippet = {
       expand = function(args)
 				vim.fn["UltiSnips#Anon"](args.body)
-      end
+      end,
     },
     sources = {
-			{ name = "ultisnips" },
+			{name = 'ultisnips'},
       {name = 'path'},
       {name = 'nvim_lsp'},
       {name = 'buffer', keyword_length = 3},
@@ -60,9 +61,13 @@ function Plugin.config()
     },
     -- See :help cmp-mapping
     mapping = {
+			-- ['<C-Space>'] = cmp.mapping.complete(),
 			['<Tab>'] = cmp.mapping(
 			function(fallback)
-				cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
+				-- cmp_ultisnips_mappings.compose{"expand"}(fallback)
+				-- cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
+        -- just expand
+        cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
 			end,
 			{ "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
 			),

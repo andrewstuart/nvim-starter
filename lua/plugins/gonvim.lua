@@ -46,6 +46,7 @@ local Plugin = {
         vim.api.nvim_set_keymap("n", "<leader>gi", "<cmd>GoInstall<CR>", {noremap = true})
         vim.api.nvim_set_keymap("n", "<leader>ge", "<cmd>GoIfErr<CR>", {noremap = true})
         vim.api.nvim_set_keymap("n", "<leader>gm", "<cmd>GoModTidy<CR>", {noremap = true})
+        vim.api.nvim_set_keymap("n", "<leader>gn", "<cmd>GoModTidy<CR>", {noremap = true})
       end,
     })
 

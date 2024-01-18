@@ -1,4 +1,4 @@
-local Plugin = {'lukas-reineke/indent-blankline.nvim'}
+local Plugin = {'lukas-reineke/indent-blankline.nvim', version = "v2.20.8"}
 
 Plugin.name = 'indent_blankline'
 

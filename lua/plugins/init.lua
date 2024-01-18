@@ -6,7 +6,7 @@ local Plugins = {
   {'tpope/vim-repeat'},
   {'tpope/vim-commentary'},
   {'kyazdani42/nvim-web-devicons', lazy = true},
-	{'SirVer/ultisnips'},
+	-- {'SirVer/ultisnips'}, -- required in cmp
 	{'airblade/vim-gitgutter'},
 	{'bkad/CamelCaseMotion'},
   {'mattn/emmet-vim'},
@@ -17,6 +17,7 @@ local Plugins = {
   {'wellle/targets.vim'},
   {'AndrewRadev/splitjoin.vim'},
   {dir = '~/.vim/bundle/vim-kubernetes'},
+  -- {'lukas-reineke/indent-blankline.nvim', tag = 'v2.20.8'},
   -- {'andrewstuart/vim-kubernetes'},
   -- {'numToStr/Comment.nvim', config = true, event = 'VeryLazy'},
 
@@ -28,6 +29,7 @@ local Plugins = {
 	-- {'fatih/vim-go'},
 	{'ayu-theme/ayu-vim'},
   {'tomasr/molokai'},
+  {'niscolas/nvim-godot'},
 }
 
 return Plugins
