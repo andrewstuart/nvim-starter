@@ -209,7 +209,8 @@ let mapleader="\\"
 " completion
 " au filetype go inoremap <buffer> . .<C-x><C-o>
 
-" au BufRead,BufNewFile *.yaml.tpl set ft=yaml
+" au BufRead,BufNewFile *.yaml,*.yml set ft=helm
+au BufRead,BufNewFile */templates/*/*.yaml,*/templates/*/*.yml set ft=helm
 au FileType yaml let g:indentLine_char = '⦙'
 
 " au BufRead,BufNewFile go.mod set ft=gomod
@@ -301,6 +302,7 @@ let g:ale_go_golangci_lint_options = '
       \ --disable=varnamelen
       \ --disable=depguard
       \ --disable=godot
+      \ --disable=tagliatelle
       \ --disable=wsl
       \ --disable=nlreturn
       \'
@@ -343,10 +345,10 @@ au FileType gradle* nmap <leader>r :!gradle build<CR>
 " let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
+" let g:UltiSnipsExpandTrigger = "<tab>"
+" let g:UltiSnipsJumpForwardTrigger = "<tab>"
 
-let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snips"]
+" let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snips"]
 
 " au FileType sql nmap <leader>r :call RunSql()<CR>
 " let g:sql_type_default = 'pgsql'
