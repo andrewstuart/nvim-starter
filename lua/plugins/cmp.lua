@@ -4,11 +4,11 @@ Plugin.dependencies = {
   -- Sources
   {'hrsh7th/cmp-buffer'},
   {'hrsh7th/cmp-path'},
-  {'saadparwaiz1/cmp_luasnip'},
+  -- {'saadparwaiz1/cmp_luasnip'},
   {'hrsh7th/cmp-nvim-lsp'},
 
   -- Snippets
-  {'L3MON4D3/LuaSnip'},
+  -- {'L3MON4D3/LuaSnip'},
   {'rafamadriz/friendly-snippets'},
 	{"SirVer/ultisnips"},
 	{"quangnguyen30192/cmp-nvim-ultisnips"},
@@ -19,11 +19,12 @@ Plugin.event = 'InsertEnter'
 function Plugin.config()
   vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 	local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
+  -- require("cmp_nvim_ultisnips").setup{}
 
   local cmp = require('cmp')
-  local luasnip = require('luasnip')
+  -- local luasnip = require('luasnip')
 
-  require('luasnip.loaders.from_vscode').lazy_load()
+  -- require('luasnip.loaders.from_vscode').lazy_load()
 
   local select_opts = {behavior = cmp.SelectBehavior.Select}
 
@@ -39,7 +40,7 @@ function Plugin.config()
       {name = 'path'},
       {name = 'nvim_lsp'},
       {name = 'buffer', keyword_length = 3},
-      {name = 'luasnip', keyword_length = 2},
+      -- {name = 'luasnip', keyword_length = 2},
     },
     window = {
       completion = cmp.config.window.bordered(),
@@ -50,7 +51,7 @@ function Plugin.config()
       format = function(entry, item)
         local menu_icon = {
           nvim_lsp = 'λ',
-          luasnip = '⋗',
+          -- luasnip = '⋗',
           buffer = 'Ω',
           path = '🖫',
         }
@@ -62,12 +63,9 @@ function Plugin.config()
     -- See :help cmp-mapping
     mapping = {
 			-- ['<C-Space>'] = cmp.mapping.complete(),
-			['<Tab>'] = cmp.mapping(
+			['<TAB>'] = cmp.mapping(
 			function(fallback)
-				-- cmp_ultisnips_mappings.compose{"expand"}(fallback)
-				-- cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
-        -- just expand
-        cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
+				cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
 			end,
 			{ "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
 			),
@@ -87,39 +85,20 @@ function Plugin.config()
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
 
       ['<C-e>'] = cmp.mapping.abort(),
-      ['<C-y>'] = cmp.mapping.confirm({select = true}),
+      ['<S-CR>'] = cmp.mapping.confirm({select = true}),
       ['<CR>'] = cmp.mapping.confirm({select = false}),
 
-      ['<C-f>'] = cmp.mapping(function(fallback)
-        if luasnip.jumpable(1) then
-          luasnip.jump(1)
-        else
-          fallback()
-        end
-      end, {'i', 's'}),
-
-      ['<C-b>'] = cmp.mapping(function(fallback)
-        if luasnip.jumpable(-1) then
-          luasnip.jump(-1)
-        else
-          fallback()
-        end
-      end, {'i', 's'}),
-      -- ['<Tab>'] = cmp.mapping(function(fallback)
-      --   local col = vim.fn.col('.') - 1
-      --
-      --   if cmp.visible() then
-      --     cmp.select_next_item(select_opts)
-      --   elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-      --     fallback()
+      -- ['<C-f>'] = cmp.mapping(function(fallback)
+      --   if luasnip.jumpable(1) then
+      --     luasnip.jump(1)
       --   else
-      --     cmp.complete()
+      --     fallback()
       --   end
       -- end, {'i', 's'}),
-      --
-      -- ['<S-Tab>'] = cmp.mapping(function(fallback)
-      --   if cmp.visible() then
-      --     cmp.select_prev_item(select_opts)
+
+      -- ['<C-b>'] = cmp.mapping(function(fallback)
+      --   if luasnip.jumpable(-1) then
+      --     luasnip.jump(-1)
       --   else
       --     fallback()
       --   end

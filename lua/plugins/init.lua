@@ -6,14 +6,14 @@ local Plugins = {
   {'tpope/vim-repeat'},
   {'tpope/vim-commentary'},
   {'kyazdani42/nvim-web-devicons', lazy = true},
-	-- {'SirVer/ultisnips'}, -- required in cmp
+	{'SirVer/ultisnips'}, -- required in cmp
 	{'airblade/vim-gitgutter'},
 	{'bkad/CamelCaseMotion'},
   {'mattn/emmet-vim'},
   {'cuducos/yaml.nvim'},
   {'dense-analysis/ale'},
   {'towolf/vim-helm'},
-  {'wellle/context.vim'},
+  {'nvim-treesitter/nvim-treesitter-context'},
   {'wellle/targets.vim'},
   {'AndrewRadev/splitjoin.vim'},
   {dir = '~/.vim/bundle/vim-kubernetes'},

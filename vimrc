@@ -294,6 +294,8 @@ let g:ale_go_golangci_lint_options = '
       \ --disable=forbidigo
       \ --disable=gomnd
       \ --disable=ifshort
+      \ --disable=funlen
+      \ --disable=gochecknoinits
       \ --disable=exhaustivestruct
       \ --disable=exhaustruct
       \ --disable=gochecknoglobals
@@ -345,8 +347,8 @@ au FileType gradle* nmap <leader>r :!gradle build<CR>
 " let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 " better key bindings for UltiSnipsExpandTrigger
-" let g:UltiSnipsExpandTrigger = "<tab>"
-" let g:UltiSnipsJumpForwardTrigger = "<tab>"
+" let g:UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"
+" let g:UltiSnipsJumpForwardTrigger = "<Plug>(ultisnips_jump_forward)"
 
 " let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snips"]
 
@@ -432,3 +434,4 @@ command! PrettyXML call DoPrettyXML()
 
 au FileType rust nmap <leader>r :RustRun<CR>
 let g:copilot_filetypes = {'markdown': v:true, 'yaml': v:true, 'helm': v:true}
+" let g:context_enabled = 1
