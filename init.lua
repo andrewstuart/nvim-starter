@@ -16,3 +16,15 @@ vim.cmd('source ~/.config/nvim/vimrc')
 
 -- pcall(vim.cmd.colorscheme, 'ayu')
 pcall(vim.cmd.colorscheme, 'molokai')
+
+local Mk = function()
+  if vim.g.running then
+    print('Already running')
+    return
+  end
+  vim.g.running = true
+  vim.cmd('silent !make')
+  vim.g.running = false
+end
+
+vim.keymap.set('n', '<leader>mk', Mk, { noremap = true })
