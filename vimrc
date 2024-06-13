@@ -239,28 +239,6 @@ au FileType yaml let g:indentLine_char = '⦙'
 " au FileType go let g:go_auto_sameids=1
 
 " nmap <leader>md :call BGMake('make deploy')<CR>
-" nmap <leader>mk :call BGMake('make')<CR>
-
-function! BGMakeDone(job, status)
-  " Read the output from the command into the quickfix window
-  " echo job
-  if a:status != 0
-    execute "30split " . g:output
-  endif
-  " Open the quickfix window
-  echo 'Done deploying code'
-  unlet g:output
-endfunction
-
-function! BGMake(action)
-  if exists('g:output')
-    echo 'Already running'
-  else 
-    let g:output = tempname()
-    call job_start(a:action, {'out_name': g:output, 'out_io': 'file', 'exit_cb': 'BGMakeDone', 'err_io': 'file', 'err_name': g:output})
-    echo 'Deploying code'
-  endif
-endfunction
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
