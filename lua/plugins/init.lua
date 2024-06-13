@@ -30,6 +30,16 @@ local Plugins = {
 	{'ayu-theme/ayu-vim'},
   {'tomasr/molokai'},
   {'niscolas/nvim-godot'},
+  {'kawre/leetcode.nvim'},
+  {'ribelo/taskwarrior.nvim', config = true},
+  {
+    'akinsho/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+  }
 }
 
 return Plugins
