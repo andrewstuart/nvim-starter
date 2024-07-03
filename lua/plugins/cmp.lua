@@ -37,11 +37,11 @@ function Plugin.config()
       end,
     },
     sources = {
-      { name = 'nvim_lsp_signature_help' },
 			{name = 'ultisnips'},
       {name = 'path'},
       {name = 'nvim_lsp'},
       {name = 'buffer', keyword_length = 3},
+      {name = 'nvim_lsp_signature_help' },
       -- {name = 'luasnip', keyword_length = 2},
     },
     window = {

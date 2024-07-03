@@ -9,7 +9,6 @@ local Plugins = {
 	{'SirVer/ultisnips'}, -- required in cmp
 	{'airblade/vim-gitgutter'},
   {'hrsh7th/cmp-nvim-lsp'},
-  {'hrsh7th/cmp-nvim-lsp-signature-help'},
 	{'bkad/CamelCaseMotion'},
   {'mattn/emmet-vim'},
   {'cuducos/yaml.nvim'},
