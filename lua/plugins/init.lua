@@ -33,6 +33,9 @@ local Plugins = {
   {'tomasr/molokai'},
   {'niscolas/nvim-godot'},
   {'kawre/leetcode.nvim'},
+  {'mfussenegger/nvim-dap'},
+  {'theHamsta/nvim-dap-virtual-text'},
+  {'rcarriga/nvim-dap-ui'},
   {'ribelo/taskwarrior.nvim', config = true},
   -- {
   --   'akinsho/flutter-tools.nvim',

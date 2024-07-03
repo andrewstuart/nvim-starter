@@ -37,7 +37,7 @@ function Plugin.init()
     severity_sort = true,
     float = {
       border = 'rounded',
-      source = 'always',
+      -- source = 'always',
     },
   })
 
