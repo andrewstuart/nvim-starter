@@ -40,8 +40,8 @@ function Plugin.config()
 			{name = 'ultisnips'},
       {name = 'path'},
       {name = 'nvim_lsp'},
-      {name = 'buffer', keyword_length = 3},
       {name = 'nvim_lsp_signature_help' },
+      {name = 'buffer', keyword_length = 3},
       -- {name = 'luasnip', keyword_length = 2},
     },
     window = {
@@ -65,6 +65,12 @@ function Plugin.config()
     -- See :help cmp-mapping
     mapping = {
 			-- ['<C-Space>'] = cmp.mapping.complete(),
+			['<C-space>'] = cmp.mapping(
+			function(fallback)
+				cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
+			end,
+			{ "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
+			),
 			['<TAB>'] = cmp.mapping(
 			function(fallback)
 				cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)

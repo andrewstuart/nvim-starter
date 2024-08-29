@@ -265,11 +265,11 @@ let g:go_list_type = "quickfix"
 " ale
 let g:ale_linters = {'go': ['golangci-lint', 'gopls', 'go vet'], 'proto': ['buf-lint',], 'sql': ['sqlint',],}
 let g:ale_fixers = {'go': ['gopls'], 'proto': ['buf-lint',], 'sql': ['sqlint',],}
-" let g:ale_linters_explicit = 1
+let g:ale_linters_explicit = 1
 let g:ale_go_golangci_lint_options = '
-      \ --enable-all
       \ --disable=errcheck
       \ --disable=forbidigo
+      \ --disable=tagalign
       \ --disable=gomnd
       \ --disable=ifshort
       \ --disable=funlen
@@ -286,6 +286,7 @@ let g:ale_go_golangci_lint_options = '
       \ --disable=wsl
       \ --disable=nlreturn
       \'
+      " \ --enable-all
 let g:ale_go_golangci_lint_package = 1
 " let g:ale_set_signs = 0
 
@@ -378,7 +379,7 @@ set statusline+=%*
 " " let g:pymode_rope_goto_definition_bind = "<C-g>"
 " au FileType python nmap <leader>gr :!python %<CR>
 "
-au FileType yaml nmap <leader>r :KubeApply<CR>
+au FileType yaml,helm nmap <leader>r :KubeApply<CR>
 
 function! DoPrettyXML()
   " save the filetype so we can restore it later
