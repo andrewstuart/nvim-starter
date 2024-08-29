@@ -130,6 +130,7 @@ imap <F6> <Esc>:wqall<CR>
 map <F10> <Esc>:TagbarToggle<CR>
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
+nmap <Leader>f <Plug>(prettier-format)
 " nmap <silent> ;; :bnext<CR>
 " nmap <silent> ;1 :b1<CR>
 " nmap <silent> ;2 :b2<CR>
