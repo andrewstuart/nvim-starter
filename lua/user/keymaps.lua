@@ -35,6 +35,7 @@ vim.keymap.set('n', '<leader>fy', '<cmd>set filetype=yaml<cr>')
 
 -- Buffers
 vim.cmd('nmap <silent> ;; :bnext<CR>')
+vim.cmd('nmap <silent> ;p :bprev<CR>')
 for i = 1, 9 do
   vim.keymap.set('n', ';' .. i, ':b' .. i .. '<CR>', { noremap = true, silent = true })
 end

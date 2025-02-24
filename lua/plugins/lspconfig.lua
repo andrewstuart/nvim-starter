@@ -75,7 +75,7 @@ function Plugin.config()
   require('mason-lspconfig').setup({
     ensure_installed = {
       'eslint',
-      'tsserver',
+      -- 'tsserver',
       'html',
       'cssls',
       'lua_ls',
@@ -88,15 +88,26 @@ function Plugin.config()
         -- See :help lspconfig-setup
         lspconfig[server].setup({})
       end,
-      ['tsserver'] = function()
-        lspconfig.tsserver.setup({
+      ['rust_analyzer'] = function()
+        lspconfig.rust_analyzer.setup({
           settings = {
-            completions = {
-              completeFunctionCalls = true
+            ['rust-analyzer'] = {
+              checkOnSave = {
+                command = 'clippy'
+              }
             }
           }
         })
       end,
+      -- ['tsserver'] = function()
+      --   lspconfig.tsserver.setup({
+      --     settings = {
+      --       completions = {
+      --         completeFunctionCalls = true
+      --       }
+      --     }
+      --   })
+      -- end,
       ['lua_ls'] = function()
         require('plugins.lsp.lua_ls')
       end,

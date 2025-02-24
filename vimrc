@@ -131,13 +131,6 @@ map <F10> <Esc>:TagbarToggle<CR>
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
 nmap <Leader>f <Plug>(prettier-format)
-" nmap <silent> ;; :bnext<CR>
-" nmap <silent> ;1 :b1<CR>
-" nmap <silent> ;2 :b2<CR>
-" nmap <silent> ;3 :b3<CR>
-" nmap <silent> ;4 :b4<CR>
-" nmap <silent> ;5 :b5<CR>
-" nmap <silent> ;3 :b3<CR>
 "--- Ends navigation commands
 "--- The following adds a sweet menu, press F4 to use it.
 
@@ -413,5 +406,8 @@ endfunction
 command! PrettyXML call DoPrettyXML()
 
 au FileType rust nmap <leader>r :RustRun<CR>
+au FileType rust nmap <leader>b :RustBuild<CR>
+au FileType rust nmap <leader>t :RustTest<CR>
 let g:copilot_filetypes = {'markdown': v:true, 'yaml': v:true, 'helm': v:true}
+let g:rustfmt_autosave = 1
 " let g:context_enabled = 1
