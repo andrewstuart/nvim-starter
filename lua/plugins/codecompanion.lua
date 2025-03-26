@@ -15,10 +15,10 @@ function Plugin.config()
   require("codecompanion").setup({
     strategies = {
       chat = {
-        adapter = "anthropic",
+        adapter = "gemini",
       },
       inline = {
-        adapter = "anthropic",
+        adapter = "gemini",
       },
     },
     adapters = {
@@ -34,7 +34,8 @@ function Plugin.config()
         return require("codecompanion.adapters").extend("gemini", {
           schema = {
             model = {
-              default = "gemini-2.5-pro-exp-03-25",
+              -- default = "gemini-2.5-pro-exp-03-25",
+              default = "gemini-2.0-flash",
             },
           },
           env = {
