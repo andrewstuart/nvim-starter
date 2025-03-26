@@ -4,6 +4,7 @@ local Plugin = {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
+    "j-hui/fidget.nvim",
   },
 }
 
@@ -29,6 +30,19 @@ function Plugin.config()
           },
         })
       end,
+      gemini = function()
+        return require("codecompanion.adapters").extend("gemini", {
+          schema = {
+            model = {
+              default = "gemini-2.5-pro-exp-03-25",
+            },
+          },
+          env = {
+            -- read from file
+            api_key = vim.fn.readfile(vim.fn.expand("~/.config/nvim-secret/gemini_key"))[1],
+          },
+        })
+      end,
     },
 
     -- -- Optional, defaults to `false`
@@ -45,10 +59,12 @@ end
 function Plugin.init()
   -- See :help codecompanion
   vim.keymap.set("n", "<leader>cc", "<cmd>CodeCompanion<cr>")
+  vim.keymap.set("n", "<leader>ca", "<cmd>CodeCompanionActions<cr>")
   vim.keymap.set("n", "<leader>ch", "<cmd>CodeCompanionChat<cr>")
   vim.keymap.set("n", "<leader>cC", "<cmd>CodeCompanionClose<cr>")
   vim.keymap.set("n", "<leader>cf", "<cmd>CodeCompanionFormat<cr>")
   vim.keymap.set("n", "<leader>ci", "<cmd>CodeCompanionInsert<cr>")
+  require("plugins.codecompanion.fidget-spinner"):init()
 end
 
 

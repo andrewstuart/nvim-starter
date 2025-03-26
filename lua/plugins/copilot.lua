@@ -10,8 +10,10 @@ Plugin.config = function()
   vim.g.copilot_no_cr_map = true
   vim.g.copilot_no_space_map = true
   vim.g.copilot_no_tab_map = true
+
   vim.g.copilot_settings = { selectedCompletionModel = 'gpt-4o-copilot' }
-  vim.g.copilot_integration_id = 'vscode-chat'
+  -- vim.g.copilot_integration_id = 'vscode-chat'
+
   vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
   -- Disable/enable copilot
   vim.keymap.set({'n', 'x', 'v'}, '<leader>cd', '<cmd>Copilot disable<cr><cmd>echo "Copilot disabled"<cr>')
