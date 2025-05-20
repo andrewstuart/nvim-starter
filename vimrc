@@ -240,8 +240,8 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-let g:go_def_mode = 'gopls'
-let g:go_info_mode = 'gopls'
+" let g:go_def_mode = 'gopls'
+" let g:go_info_mode = 'gopls'
 
 call camelcasemotion#CreateMotionMappings(',')
 
@@ -257,7 +257,7 @@ let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["xsl"] }
 let g:go_list_type = "quickfix"
 
 " ale
-let g:ale_linters = {'go': ['golangci-lint', 'gopls', 'go vet'], 'proto': ['buf-lint',], 'sql': ['sqlint',],}
+let g:ale_linters = {'go': ['golangci-lint', 'go vet'], 'proto': ['buf-lint',], 'sql': ['sqlint',],}
 let g:ale_fixers = {'go': ['gopls'], 'proto': ['buf-lint',], 'sql': ['sqlint',],}
 let g:ale_linters_explicit = 1
 let g:ale_go_golangci_lint_options = '

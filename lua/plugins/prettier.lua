@@ -1,5 +1,5 @@
 local Plugin = {'MunifTanjim/prettier.nvim'}
-Plugin.dependencies = {'jose-elias-alvarez/null-ls.nvim'}
+Plugin.dependencies = {'nvimtools/none-ls.nvim'}
 
 Plugin.config = function()
   local prettier = require('prettier')
@@ -20,9 +20,9 @@ Plugin.config = function()
       "yaml",
       "tsx",
     },
-    ["null-ls"] = {
+    ["none-ls"] = {
       condition = function()
-        return prettier.config_exists({
+        return prettier and prettier.config_exists({
           -- if `false`, skips checking `package.json` for `"prettier"` key
           check_package_json = true,
         })

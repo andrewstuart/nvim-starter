@@ -34,8 +34,8 @@ function Plugin.config()
         return require("codecompanion.adapters").extend("gemini", {
           schema = {
             model = {
-              -- default = "gemini-2.5-pro-exp-03-25",
-              default = "gemini-2.0-flash",
+              default = "gemini-2.5-pro-preview-05-06",
+              -- default = "gemini-2.0-flash",
             },
           },
           env = {

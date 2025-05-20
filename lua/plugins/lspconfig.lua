@@ -5,7 +5,7 @@ Plugin.dependencies =  {
   {'hrsh7th/cmp-nvim-lsp'},
   {'williamboman/mason-lspconfig.nvim', lazy = true},
   {
-    'williamboman/mason.nvim',
+    'mason-org/mason.nvim',
     cmd = 'Mason',
     lazy = true,
     config = function() user.setup_mason() end

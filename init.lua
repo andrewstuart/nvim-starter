@@ -9,6 +9,8 @@ load('user.keymaps')
 load('user.plugins')
 load('user.colors')
 
+vim.opt.title = true
+
 vim.opt.rtp:prepend('~/.vim')
 vim.opt.packpath = vim.opt.runtimepath:get()
 vim.cmd('source ~/.config/nvim/vimrc')
